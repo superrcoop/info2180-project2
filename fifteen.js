@@ -28,6 +28,8 @@ window.onload = function (){
 	y = '300px';
 
 	shuffle.onclick = function(){
+		document.getElementsByClassName('explanation')[1].style.visibility="hidden";  
+		document.getElementsByClassName('explanation')[0].style.visibility="show"; 
 		for (var i=0; i<300; i++) {
 			var rand = parseInt(Math.random()* 100) %4; 
 			if (rand == 0){
@@ -79,8 +81,8 @@ function checkMove(position){
 }
 
 function win(){
-	document.getElementsByTagName('overall')[0].style.backgroundImage= "url('Winner.jpg')";
-	document.getElementsByClassName('explanation')[0].style.visibility="hidden"; //hides text when user is being notified
+	document.getElementsByClassName('explanation')[1].innerHTML="<h2>CONGRATULATIONS !! YOU WON. Hit shuffle to restart</h2>"
+	document.getElementsByClassName('explanation')[0].style.visibility="hidden";  
 }
 
 function finish(){
